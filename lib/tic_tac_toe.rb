@@ -96,8 +96,7 @@ if position_1 == "X" && position_2 == "X" && position_3 == "X"
     return win_combination
   end
 }
-  return
-    false
+  return false
 end
 
 def full?
@@ -121,44 +120,43 @@ def over?
 end
 
 def winner
-  # index=won?
-  # if(index==false)
+  index=won?
+  if(index==false)
+    return nil
+  elsif @board[index[0]]=="X"
+      index[0]
+      return "X"
+  elsif @board[index[0]]=="O"
+    return "O"
+  end
+  # x_arrays = @board.select do |cell|
+  #   cell == 'X'
+  # end
+  #
+  # o_arrays = @board.select do |cell|
+  #   cell == 'O'
+  # end
+  #
+  # if x_arrays.size > o_arrays.size
+  #   return 'X'
+  # elsif o_arrays.size > x_arrays.size
+  #   return 'O'
+  # else
   #   return nil
   # end
-  # if @board[index[0]]=="X"
-  #     index[0]
-  #     return "X"
-  # elsif @board[index[0]]=="O"
-  #   return "O"
-  # end
-  x_arrays = @board.select do |cell|
-    cell == 'X'
-  end
-
-  o_arrays = @board.select do |cell|
-    cell == 'O'
-  end
-
-  if x_arrays.size > o_arrays.size
-    return 'X'
-  elsif o_arrays.size > x_arrays.size
-    return 'O'
-  else
-    return nil
-  end
 end
 
-def play
-  play = 0
-  input = gets
-  until over?
-    turn
-  end
-  if won?
-    winner == "X" || winner == "O"
-    puts "Congratulations #{winner}!"
-  else draw?
-    puts "Cat's Game!"
-  end
-end
+# def play
+#   play = 0
+#   input = gets
+#   until over?
+#     turn
+#   end
+#   if won?
+#     winner == "X" || winner == "O"
+#     puts "Congratulations #{winner}!"
+#   else draw?
+#     puts "Cat's Game!"
+#   end
+# end
 end
