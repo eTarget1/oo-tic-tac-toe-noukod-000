@@ -155,7 +155,7 @@ def play
   if won?
     if winner == "X" || winner == "O"
       puts "Congratulations #{winner}!"
-    else draw?
+    else
       puts "Cat's Game!"
     end
   end
